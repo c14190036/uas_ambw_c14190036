@@ -16,6 +16,7 @@ void main() async {
     MaterialApp(
       title: "UAS AMBW",
       home: MyApp(),
+      debugShowCheckedModeBanner: true,
     ),
   );
 }
@@ -35,6 +36,7 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       appBar: AppBar(
         title: Text("UAS AMBW"),
+        centerTitle: true,
       ),
       body: Scaffold(
         body: _hal[temp],
@@ -42,8 +44,7 @@ class _MyAppState extends State<MyApp> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Like'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.history), label: 'History'),
+            BottomNavigationBarItem(icon: Icon(Icons.details), label: 'Detail'),
           ],
           currentIndex: temp,
           onTap: (index) {
