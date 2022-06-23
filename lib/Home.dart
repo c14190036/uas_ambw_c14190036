@@ -64,7 +64,12 @@ class _HomeState extends State<Home> {
                               children: <Widget>[
                                 TextButton(
                                   child: Icon(Icons.favorite),
-                                  onPressed: () {/* ... */},
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => like()));
+                                  },
                                 ),
                                 const SizedBox(width: 0),
                               ],
