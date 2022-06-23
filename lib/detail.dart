@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:uas_ambw_c14190036/dataAPI.dart';
@@ -42,14 +43,13 @@ class _detailState extends State<detail> {
                       itemBuilder: (context, index) {
                         return Card(
                           child: Column(
-                            children: <Widget>[
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundImage:
-                                        NetworkImage(isiData[index].cthumbnail),
-                                  )
-                                ],
+                            children: [
+                              CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                  isiData[index].cthumbnail,
+                                ),
+                                minRadius: 30,
+                                maxRadius: 40,
                               ),
                               Row(
                                 children: [
@@ -108,8 +108,14 @@ class _detailState extends State<detail> {
                               Row(
                                 children: [
                                   Padding(padding: EdgeInsets.all(5)),
-                                  Text("Date : "),
-                                  Text("${isiData[index].cpubDate}"),
+                                  Text(
+                                    "Date : ",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                  Text(
+                                    "${isiData[index].cpubDate}",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
                                 ],
                               )
                             ],
